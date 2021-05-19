@@ -1,5 +1,5 @@
 {
     "bot_token": "",
-    "prefix": "",
-    "authorized_ids": []
+    "authorized_ids": [],
+    "site": ""
 }
