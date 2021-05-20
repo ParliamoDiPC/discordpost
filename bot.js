@@ -11,7 +11,10 @@ bot.on("ready", () => {
 bot.on("interaction", interaction => {
     if (!interaction.isCommand()) return
     if (interaction.commandName === "post") {
-        // WIP ;)
+        if (!BotConfiguration.authorized_ids.includes(message.author.id)) return interaction.reply(":no_entry: You aren't authorized to post on " + BotConfiguration.site + ".")
+        const title = interaction.options[0].value
+        const post_text = interaction.options[1].value
+        const post = { "title": title, "post": post_text, "post_link": title.toLowerCase().replace(" ", "_").replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g, "") }
     }
 })
 
